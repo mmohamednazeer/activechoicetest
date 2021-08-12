@@ -3,6 +3,8 @@ stage 'Init'
 node {
   checkout scm
   sh 'echo $BRANCH_NAME'
+  sh 'echo $CHANGE_ID'
+  print("Change ID: "+env.CHANGE_ID)
 }
 if (env.BRANCH_NAME == 'main') {
   stage 'Only on master'
